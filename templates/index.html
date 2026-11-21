@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SentinelOps - Infrastructure Monitoring</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>SentinelOps</h1>
+        <p>Privacy-First Infrastructure Monitoring Platform</p>
+    </header>
+
+    <main>
+
+        <!-- INFRASTRUCTURE OVERVIEW -->
+
+        <section>
+            <h2>Infrastructure Overview</h2>
+
+            <div class="dashboard">
+
+                <div class="metric-card">
+                    <h3>CPU Usage</h3>
+                    <p id="cpu">--</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Memory Usage</h3>
+                    <p id="memory">--</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Disk Usage</h3>
+                    <p id="disk">--</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Network Latency</h3>
+                    <p id="latency">--</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Collector Status</h3>
+                    <p id="status">--</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- LIVE INFRASTRUCTURE MONITORING -->
+
+        <section class="monitoring-section">
+
+            <h2>Live Infrastructure Monitoring</h2>
+
+            <p>Real-time system performance trends</p>
+
+            <div class="chart-grid">
+
+                <div class="chart-card">
+                    <h3>CPU Usage History</h3>
+                    <canvas id="cpuChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Memory Usage History</h3>
+                    <canvas id="memoryChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Network Latency History</h3>
+                    <canvas id="latencyChart"></canvas>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY ALERTS -->
+
+        <section>
+            <h2>Security Alerts</h2>
+
+            <ul id="alerts">
+                <li>Waiting for alerts...</li>
+            </ul>
+        </section>
+
+
+        <!-- AI INFRASTRUCTURE ANALYSIS -->
+
+        <section class="ai-panel">
+
+            <h2>AI Infrastructure Analysis</h2>
+
+            <div id="ai-status" class="ai-waiting">
+                Waiting for AI analysis...
+            </div>
+
+            <p id="ai-message">
+                AI results will appear here.
+            </p>
+
+            <div class="ai-score-card">
+
+                <h3>AI Anomaly Score</h3>
+
+                <p id="ai-score">--</p>
+
+                <small>
+                    Isolation Forest decision score.
+                    Lower scores indicate more unusual behaviour.
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- INCIDENT DNA -->
+
+        <section>
+
+            <h2>IncidentDNA - Correlated Incidents</h2>
+
+            <div class="incident-panel">
+                <div id="incidents">
+                    Loading incidents...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- EGRESS PROOF AND PRIVACY AUDIT -->
+
+        <section>
+
+            <h2>Egress Proof Panel</h2>
+
+            <p>
+                Review the telemetry fields approved for transfer
+                by the Privacy Guard.
+            </p>
+
+            <div class="privacy-audit">
+
+                <h3>Privacy Audit Status</h3>
+
+                <p id="privacy-status">
+                    Waiting for verification...
+                </p>
+
+                <div class="audit-counts">
+
+                    <p>
+                        Approved Fields:
+                        <strong id="approved-count">--</strong>
+                    </p>
+
+                    <p>
+                        Blocked Fields:
+                        <strong id="blocked-count">--</strong>
+                    </p>
+
+                </div>
+
+                <h3>Approved Fields</h3>
+
+                <ul id="approved-fields">
+                    <li>Waiting for audit...</li>
+                </ul>
+
+                <h3>Blocked Fields</h3>
+
+                <ul id="blocked-fields">
+                    <li>Waiting for audit...</li>
+                </ul>
+
+                <h3>Exact Transfer Payload</h3>
+
+                <pre id="egress-data">Waiting for data...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- CHART.JS LIBRARY -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- PROJECT JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
